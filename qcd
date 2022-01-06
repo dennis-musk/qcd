@@ -37,7 +37,7 @@ handle()
     line_num=`wc -l $curr_usr_qcd_history_dir | awk '{print $1}'` #`wc -l $history_dir` 统计$history_dir所指文件的行数
     h_setup_content=$curr_usr_qcd_content
     h_history_dir=$curr_usr_qcd_history_dir
-    tmp=$h_setup_content/tmp
+    tmp=$h_setup_content/tmp/tmp
     pos=1
     enter_dir=""
     

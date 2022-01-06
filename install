@@ -3,10 +3,10 @@
 # changed by zengxianbo @Mon Dec 28 13:16:39 CST 2015
 #written by xiewei 2004 
 
-setup_content=/etc/qcd
+setup_content=$HOME/.qcd
 history_dir=$setup_content/history_dir
-bin_content=/usr/local/sbin
-prof_content=/etc/profile.d
+bin_content=$HOME/bin
+prof_content=$HOME/.profile.d
 
 setup()
 {
@@ -85,17 +85,12 @@ usage()
     exit 1
 }
 
-echo "Qcd Install Software"
-echo "Written By XieWei 2004" 
-
-# check root 
-if [ $UID -ne 0 ]; then
-	echo "Superuser privileges are required to run this script."
-	exit 1
-fi
 
 if [ $# -eq 0 ]    #?????????Ĳ???????Ϊ0?
 then
+    if [ ! -d $prof_content ]; then
+        mkdir $prof_content
+    fi
     setup
     echo "install qcd OK!"
     echo "version is 1.00"
